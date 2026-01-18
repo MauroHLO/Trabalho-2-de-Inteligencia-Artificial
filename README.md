@@ -1,7 +1,7 @@
 # 2-Trabalho-de-Intelig-ncia-Artificial
 # DBSCAN – Implementação do zero em Python (NumPy)
 
-Este repositório contém a implementação do algoritmo de agrupamento **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)** desenvolvida como parte da 2ª atividade da disciplina de Inteligência Artificial.
+Este repositório contém a implementação do algoritmo de agrupamento **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)** desenvolvida como parte da 2ª atividade da disciplina de Inteligência Artificial, bem como um relatório mais detalhado da análise feita dos resultados do algoritmo.
 
 O objetivo principal é compreender o funcionamento do DBSCAN por meio de uma implementação própria, bem como analisar seu comportamento em diferentes bases de dados, com foco especial na base **Íris**.
 
@@ -9,8 +9,6 @@ O objetivo principal é compreender o funcionamento do DBSCAN por meio de uma im
 
 ## 📌 Estrutura do projeto
 
-
----
 
 ## 🧠 Sobre o algoritmo DBSCAN
 
