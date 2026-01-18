@@ -1,4 +1,4 @@
-# 2-Trabalho-de-Intelig-ncia-Artificial
+# 2° Trabalho de Inteligência Artificial
 # DBSCAN – Implementação do zero em Python (NumPy)
 
 Este repositório contém a implementação do algoritmo de agrupamento **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)** desenvolvida como parte da 2ª atividade da disciplina de Inteligência Artificial, bem como um relatório mais detalhado da análise feita dos resultados do algoritmo.
@@ -10,7 +10,7 @@ O objetivo principal é compreender o funcionamento do DBSCAN por meio de uma im
 ## 📌 Estrutura do projeto
 
 
-## 🧠 Sobre o algoritmo DBSCAN
+## Sobre o algoritmo DBSCAN
 
 O DBSCAN é um algoritmo de agrupamento baseado em densidade que utiliza dois parâmetros principais:
 
@@ -26,7 +26,7 @@ Uma das principais vantagens do DBSCAN é a capacidade de identificar clusters d
 
 ---
 
-## 📊 Bases de dados utilizadas
+## Bases de dados utilizadas
 
 ### • Two Moons
 Base sintética com dois clusters em formato não linear, utilizada para avaliar a capacidade do DBSCAN de identificar agrupamentos de formatos arbitrários.
@@ -44,7 +44,7 @@ Conforme sugerido no enunciado da atividade, foi utilizada a **distância euclid
 
 ---
 
-## 🔬 Metodologia
+## Metodologia
 
 Os experimentos foram conduzidos variando-se os parâmetros `ε` e `MinPts`, bem como o critério de distância nas bases sintéticas. Para a base Íris, foram realizadas visualizações em duas e três dimensões, permitindo uma análise qualitativa dos agrupamentos obtidos.
 
@@ -52,7 +52,7 @@ O algoritmo foi implementado do zero utilizando **NumPy**, sem o uso de implemen
 
 ---
 
-## 📈 Resultados e análise (Base Íris)
+## Resultados e análise (Base Íris)
 
 Os resultados mostram que o DBSCAN é capaz de identificar agrupamentos coerentes para parte da base Íris, especialmente para a espécie *Iris setosa*, que apresenta maior separabilidade em relação às demais.
 
