@@ -1,164 +1,101 @@
-2º Trabalho de Inteligência Artificial
-DBSCAN – Implementação do zero em Python (NumPy)
+# DBSCAN – Implementação do Zero em Python (NumPy)
 
-Este repositório contém a implementação do algoritmo de agrupamento DBSCAN (Density-Based Spatial Clustering of Applications with Noise) desenvolvida como parte da 2ª atividade da disciplina de Inteligência Artificial.
+**2º Trabalho da disciplina de Inteligência Artificial**
 
-O objetivo principal é compreender o funcionamento do DBSCAN por meio de uma implementação própria, utilizando apenas NumPy, sem recorrer a bibliotecas prontas de clustering, além de analisar seu comportamento nas bases de dados solicitadas:
+Este repositório apresenta uma implementação **do zero** do algoritmo de agrupamento **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)**, desenvolvida utilizando exclusivamente a biblioteca **NumPy**, sem o uso de bibliotecas prontas de clustering.
 
-Two Moons
+O objetivo do trabalho é compreender o funcionamento interno do DBSCAN e analisar seu comportamento em diferentes bases de dados, com foco especial na base **Íris**.
 
-Two Circles
+---
 
-Íris
+## Estrutura do Projeto
 
-Com ênfase especial na análise da base Íris.
+├── main.py # Script principal de execução
+├── dbscan.py # Implementação do algoritmo DBSCAN
+├── distances.py # Métricas de distância (euclidiana, manhattan, chebyshev)
+├── plots.py # Funções de visualização 2D e 3D
+├── datasets.py # Carregamento e geração das bases de dados
+└── relatorio.md
 
-📁 Estrutura do projeto
-.
-├── main.py                # Script principal que executa os experimentos
-├── dbscan.py              # Implementação do algoritmo DBSCAN
-├── distances.py           # Funções para cálculo de distâncias
-│                           # (euclidiana, manhattan, chebyshev)
-├── plots.py               # Funções para visualização 2D e 3D dos resultados
-├── datasets.py            # Funções para carregar/gerar as bases de dados
-└── README.md              # Este arquivo
 
-📌 Sobre o algoritmo DBSCAN
+---
+
+## Sobre o DBSCAN
 
 O DBSCAN é um algoritmo de agrupamento baseado em densidade que utiliza dois parâmetros principais:
 
-ε (epsilon): raio da vizinhança de um ponto
-
-MinPts: número mínimo de pontos dentro da vizinhança (incluindo o próprio ponto) para que um ponto seja considerado núcleo
+- **ε (epsilon)**: raio da vizinhança de um ponto  
+- **MinPts**: número mínimo de pontos na vizinhança para que um ponto seja considerado núcleo  
 
 Com base nesses parâmetros, os pontos são classificados como:
 
-Núcleo: possui ≥ MinPts pontos na vizinhança
+- **Núcleo**: possui pelo menos *MinPts* pontos na vizinhança  
+- **Borda**: não é núcleo, mas está na vizinhança de um ponto núcleo  
+- **Ruído**: não pertence a nenhum cluster  
 
-Borda: não é núcleo, mas está na vizinhança de pelo menos um ponto núcleo
+Uma das principais vantagens do DBSCAN é a capacidade de identificar **clusters de formatos arbitrários** e detectar **ruído automaticamente**, sem exigir a definição prévia do número de clusters.
 
-Ruído: não pertence a nenhum cluster
+---
 
-Os clusters são formados pela expansão de pontos núcleo conectados por densidade.
+## Bases de Dados Utilizadas
 
-Principais vantagens do DBSCAN
+- **Two Moons**  
+  Base sintética com clusters não convexos, usada para avaliar o comportamento do algoritmo em estruturas não lineares.
 
-Identifica clusters de formatos arbitrários
+- **Two Circles**  
+  Base sintética com dois círculos concêntricos, utilizada para testar agrupamentos circulares.
 
-Detecta ruído automaticamente
+- **Íris**  
+  Base real clássica com 150 amostras, 4 atributos numéricos e 3 espécies:
+  - Iris setosa  
+  - Iris versicolor  
+  - Iris virginica  
 
-Não exige a definição prévia do número de clusters
+Nos experimentos com a base Íris, foi utilizada **exclusivamente a distância euclidiana**, conforme orientação do trabalho.
 
-📊 Bases de dados utilizadas
-Two Moons
+---
 
-Base sintética com dois clusters em formato de luas crescentes (não convexos), ideal para testar a capacidade do algoritmo em lidar com estruturas não lineares.
+## Metodologia
 
-Two Circles
+- Implementação completa do DBSCAN utilizando apenas NumPy  
+- Suporte a múltiplas métricas de distância (bases sintéticas)  
+- Variação dos parâmetros ε e MinPts  
+- Visualização dos resultados:
+  - 2D: clusters, pontos núcleo, borda e ruído  
+  - 3D: análise da base Íris  
+- Análise qualitativa da distribuição das espécies reais nos clusters obtidos
 
-Base sintética composta por dois círculos concêntricos, utilizada para avaliar o comportamento do algoritmo em clusters circulares.
+---
 
-Íris
+## Resultados – Base Íris
 
-Base real clássica com:
+Na visualização 2D (comprimento × largura da pétala), a espécie **Iris setosa** forma um cluster bem definido e homogêneo, enquanto **versicolor** e **virginica** apresentam sobreposição significativa. Dependendo dos valores de ε e MinPts, são obtidos de dois a três clusters, com presença variável de ruído.
 
-150 amostras
+Na visualização 3D (combinação de atributos da sépala e pétala), observa-se uma melhora na separação visual. A espécie **setosa** permanece claramente isolada, enquanto **versicolor** e **virginica** continuam parcialmente sobrepostas, porém com melhor distinção em relação à visualização 2D.
 
-4 atributos numéricos
+Esses resultados indicam que o DBSCAN captura bem regiões densas bem definidas, mas encontra limitações quando há sobreposição natural entre classes.
 
-3 espécies:
+---
 
-Iris setosa
+## Conclusão
 
-Iris versicolor
+A implementação do DBSCAN permitiu aprofundar o entendimento sobre algoritmos de agrupamento baseados em densidade, evidenciando vantagens como:
 
-Iris virginica
+- Identificação de clusters de formatos arbitrários  
+- Detecção automática de ruído  
+- Independência do número prévio de clusters  
 
-Conforme orientado, foi utilizada exclusivamente a distância euclidiana nos experimentos com a base Íris.
+Por outro lado, o algoritmo mostrou alta sensibilidade à escolha dos parâmetros ε e MinPts, além de desempenho limitado em dados com grande sobreposição entre classes.
 
-⚙️ Metodologia
+Na base Íris, o DBSCAN foi especialmente eficaz na identificação da espécie **Iris setosa**, enquanto **versicolor** e **virginica** exigem ajustes cuidadosos de parâmetros e dimensionalidade.
 
-Implementação do DBSCAN do zero utilizando apenas NumPy
+---
 
-Suporte a três métricas de distância:
+## Como Executar
 
-Euclidiana
+Instale as dependências e rode o script principal:
 
-Manhattan
-
-Chebyshev
-(utilizadas nas bases sintéticas)
-
-Variação dos parâmetros ε e MinPts
-
-Visualização dos resultados:
-
-2D: clusters, pontos núcleo, borda e ruído
-
-3D: visualização da base Íris
-
-Análise qualitativa da distribuição das espécies reais nos clusters obtidos (base Íris)
-
-📈 Resultados e análise — Base Íris
-Visualização em 2D
-
-(Comprimento da pétala × largura da pétala)
-
-A espécie Iris setosa forma um cluster bem separado e homogêneo
-
-As espécies versicolor e virginica apresentam sobreposição significativa
-
-Dependendo dos valores de ε e MinPts, obtêm-se:
-
-De 2 a 3 clusters
-
-Quantidade variável de ruído (geralmente entre 5 e 20 pontos)
-
-Visualização em 3D
-
-(Comprimento da sépala + comprimento da pétala + largura da pétala)
-
-Há uma melhora significativa na separação visual
-
-Iris setosa é identificada como um cluster isolado e quase puro
-
-Versicolor e virginica ainda apresentam alguma sobreposição, porém menor que na visualização 2D
-
-A análise da distribuição das espécies por cluster confirma que o DBSCAN captura bem a estrutura densa da setosa, mas encontra dificuldades para separar completamente as outras duas espécies devido à sobreposição natural dos dados.
-
-✅ Conclusão
-
-A implementação do DBSCAN permitiu consolidar o entendimento sobre algoritmos de agrupamento baseados em densidade, evidenciando suas principais vantagens:
-
-Capacidade de identificar clusters de formatos arbitrários
-
-Detecção automática de ruído
-
-Não exige definição prévia do número de clusters
-
-Ao mesmo tempo, revelou limitações importantes:
-
-Alta sensibilidade à escolha dos parâmetros ε e MinPts
-
-Desempenho inferior em dados com sobreposição significativa entre classes
-
-Na base Íris, o algoritmo mostrou-se particularmente eficaz para identificar a espécie Iris setosa, enquanto versicolor e virginica exigem maior cuidado na escolha dos parâmetros e das dimensões analisadas.
-
-De forma geral, o DBSCAN se mostrou uma abordagem robusta e flexível, especialmente útil em cenários reais onde a detecção de outliers e a descoberta de estruturas densas são prioridades.
-
-▶️ Como executar
-Dependências
-
-Certifique-se de ter as dependências instaladas:
-
+```bash
 pip install numpy matplotlib scikit-learn
 
-
-Execução
-
-Execute o script principal:
-
 python main.py
-
-
-Os gráficos serão exibidos automaticamente e informações relevantes para a análise da base Íris serão impressas no console.
