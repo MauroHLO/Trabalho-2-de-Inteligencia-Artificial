@@ -10,13 +10,12 @@ O objetivo do trabalho é compreender o funcionamento interno do DBSCAN e analis
 
 ## Estrutura do Projeto
 
-├── main.py # Script principal de execução
-├── dbscan.py # Implementação do algoritmo DBSCAN
-├── distances.py # Métricas de distância (euclidiana, manhattan, chebyshev)
-├── plots.py # Funções de visualização 2D e 3D
-├── datasets.py # Carregamento e geração das bases de dados
-└── relatorio.md
-
+├── main.py         # Script principal de execução
+├── dbscan.py       # Implementação do algoritmo DBSCAN
+├── distances.py    # Métricas de distância (euclidiana, manhattan, chebyshev)
+├── plots.py        # Funções de visualização 2D e 3D
+├── datasets.py     # Carregamento e geração das bases de dados
+└── relatorio.md    # Documentação do projeto
 
 ---
 
