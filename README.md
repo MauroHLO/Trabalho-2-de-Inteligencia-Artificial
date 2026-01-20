@@ -1,4 +1,4 @@
-# DBSCAN – Implementação do Zero em Python (NumPy)
+# DBSCAN – Implementação em Python (NumPy)
 
 **2º Trabalho da disciplina de Inteligência Artificial**
 
@@ -16,7 +16,7 @@ O objetivo do trabalho é compreender o funcionamento interno do DBSCAN e analis
 ├── distances.py    # Métricas de distância (euclidiana, manhattan, chebyshev)
 ├── plots.py        # Funções de visualização 2D e 3D
 ├── datasets.py     # Carregamento e geração das bases de dados
-└── README.md       # Documentação do projeto
+└── relatorio.md    # Documentação do projeto
 
 ```
 
