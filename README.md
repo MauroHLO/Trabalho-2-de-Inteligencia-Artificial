@@ -6,6 +6,8 @@ Este repositório apresenta uma implementação **do zero** do algoritmo de agru
 
 O objetivo do trabalho é compreender o funcionamento interno do DBSCAN e analisar seu comportamento em diferentes bases de dados, com foco especial na base **Íris**.
 
+Trabalho realizado por:
+Mauro Henrique Lima Oliveira
 ---
 
 ## Estrutura do Projeto
