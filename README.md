@@ -8,6 +8,9 @@ O objetivo do trabalho é compreender o funcionamento interno do DBSCAN e analis
 
 Trabalho realizado por:
 Mauro Henrique Lima Oliveira
+Elias Souza Campos
+João Pedro Schontz da Silva
+Bernardo Ferreira Freitas
 ---
 
 ## Estrutura do Projeto
